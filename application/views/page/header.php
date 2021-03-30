@@ -32,9 +32,9 @@
     <div class="wrapper">
 
         <!-- Preloader -->
-        <div class="preloader flex-column justify-content-center align-items-center">
+        <!-- <div class="preloader flex-column justify-content-center align-items-center">
             <img class="animation__shake" src="<?php echo base_url() ?>assets/dist/img/AdminLTELogo.png" alt="AdminLTELogo" height="60" width="60">
-        </div>
+        </div> -->
 
         <!-- Navbar -->
         <nav class="main-header navbar navbar-expand navbar-white navbar-light">
@@ -44,7 +44,7 @@
                     <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
                 </li>
                 <li class="nav-item d-none d-sm-inline-block">
-                    <a href="<?php echo base_url() ?>index.php" class="nav-link">Beranda</a>
+                    <a href="<?php echo base_url() ?>" class="nav-link">Beranda</a>
                 </li>
                 <li class="nav-item d-none d-sm-inline-block">
                     <a href="#" class="nav-link">Tentang Admin</a>

@@ -23,7 +23,7 @@
                 <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
                 <li class="nav-item menu-open">
-                    <a href="<?php echo base_url() ?>index.php" class="nav-link active">
+                    <a href="<?php echo base_url() ?>" class="nav-link">
                         <i class="nav-icon fas fa-tachometer-alt"></i>
                         <p>
                             Dashboard
@@ -32,27 +32,16 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-edit"></i>
-                        <p>
-                            Input Data
-                            <i class="fas fa-angle-left right"></i>
-                        </p>
+                    <a href="<?php echo site_url('materi/index') ?>" class="nav-link">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>Materi</p>
                     </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="<?php echo base_url() ?>index.php/materi/daftar_materi.php" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Materi</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="<?php echo base_url() ?>index.php/hello/soal" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Soal</p>
-                            </a>
-                        </li>
-                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="<?php echo site_url('soal/index') ?>" class="nav-link ">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>Soal</p>
+                    </a>
                 </li>
             </ul>
         </nav>

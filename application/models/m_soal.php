@@ -1,9 +1,9 @@
 <?php
-class M_materi extends CI_Model
+class M_soal extends CI_Model
 {
     public function tampil_data()
     {
-        return $this->db->get('materi');
+        return $this->db->get('soal');
     }
 
     public function input_data($data, $table)

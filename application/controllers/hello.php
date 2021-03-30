@@ -7,8 +7,9 @@ class Hello extends CI_Controller
     {
         $this->load->view('page/header');
         $this->load->view('page/sidebar');
-        $this->load->view('page/footer');
+
         $this->load->view('index');
+        $this->load->view('page/footer');
         // $this->load->view('index');
     }
 

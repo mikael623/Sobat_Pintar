@@ -1,4 +1,3 @@
-<!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
@@ -26,7 +25,7 @@
                 <h3 class="card-title">Soal</h3>
 
                 <div class="card-tools">
-                    <a href="<?php echo base_url() ?>index.php/hello/tambah_soal" class="btn btn-tool btn-secondary"><i class="fas fa-plus"> Tambah Soal</i></a>
+                    <?php echo anchor('soal/tambah_soal', '<button class="btn btn-tool btn-outline-secondary" ><i class="fas fa-plus"> Tambah Soal</i></button>'); ?>
                     <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
                         <i class="fas fa-minus"></i>
                     </button>
@@ -55,55 +54,40 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td>
-                                #
-                            </td>
-                            <td>
-                                <a>
-                                    Soal 1
-                                </a>
-                            </td>
-                            <td class="project-state">
-                                <span class="badge badge-success">Success</span>
-                            </td>
-                            <td class="project-actions text-right">
-                                <a class="btn btn-info btn-sm" href="#">
-                                    <i class="fas fa-pencil-alt">
-                                    </i>
-                                    Edit
-                                </a>
-                                <a class="btn btn-danger btn-sm" href="#">
+                            <?php
+                            $no = 1;
+                            foreach ($soal as $soal1) :
+                            ?>
+                                <td>
+                                    <?php
+                                    echo $no++
+                                    ?>
+                                </td>
+                                <td>
+                                    <a>
+                                        <?php
+                                        echo $soal1->soal
+                                        ?>
+                                    </a>
+                                </td>
+                                <td class="project-state">
+                                    <span class="badge badge-success">Success</span>
+                                </td>
+                                <td class="project-actions text-right">
+                                    <div class="btn btn-info btn-sm">
+                                        <i class="fas fa-pencil-alt"></i> Edit
+                                    </div>
+                                </td>
+                                <td onclick="javascript: return confirm('Anda yakin hapus?')" class="project-actions text-right">
+                                    <?php echo anchor('soal/hapus/' . $soal1->id, '<div class="btn btn-danger btn-sm">
                                     <i class="fas fa-trash">
                                     </i>
-                                    Delete
-                                </a>
-                            </td>
+                                </div>') ?>
+                                </td>
                         </tr>
-                        <tr>
-                            <td>
-                                #
-                            </td>
-                            <td>
-                                <a>
-                                    Soal 2
-                                </a>
-                            </td>
-                            <td class="project-state">
-                                <span class="badge badge-success">Success</span>
-                            </td>
-                            <td class="project-actions text-right">
-                                <a class="btn btn-info btn-sm" href="#">
-                                    <i class="fas fa-pencil-alt">
-                                    </i>
-                                    Edit
-                                </a>
-                                <a class="btn btn-danger btn-sm" href="#">
-                                    <i class="fas fa-trash">
-                                    </i>
-                                    Delete
-                                </a>
-                            </td>
-                        </tr>
+                    <?php
+                            endforeach;
+                    ?>
                     </tbody>
                 </table>
             </div>
@@ -114,4 +98,3 @@
     </section>
     <!-- /.content -->
 </div>
-<!-- /.content-wrapper -->

@@ -25,7 +25,7 @@
                 <h3 class="card-title">Materi</h3>
 
                 <div class="card-tools">
-                    <button type="button" class="btn btn-tool btn-outline-primary" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-plus"> Tambah Materi</i></button>
+                    <?php echo anchor('materi/tambah_materi', '<button class="btn btn-tool btn-outline-secondary" ><i class="fas fa-plus"> Tambah Materi</i></button>'); ?>
                     <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
                         <i class="fas fa-minus"></i>
                     </button>
@@ -73,14 +73,15 @@
                                 <td class="project-state">
                                     <span class="badge badge-success">Success</span>
                                 </td>
-                                <td onclick="javascript: return confirm('Anda yakin hapus?')" class="project-actions text-right">
+                                <td class="project-actions text-right">
                                     <div class="btn btn-info btn-sm">
                                         <i class="fas fa-pencil-alt"></i> Edit
                                     </div>
+                                </td>
+                                <td onclick="javascript: return confirm('Anda yakin hapus?')" class="project-actions text-right">
                                     <?php echo anchor('materi/hapus/' . $mtr->id, '<div class="btn btn-danger btn-sm">
                                         <i class="fas fa-trash">
                                         </i>
-                                        Delete
                                     </div>') ?>
 
                                 </td>
@@ -88,31 +89,6 @@
                     <?php
                             endforeach;
                     ?>
-                    <!-- <tr>
-                        <td>
-                            #
-                        </td>
-                        <td>
-                            <a>
-                                Materi 2
-                            </a>
-                        </td>
-                        <td class="project-state">
-                            <span class="badge badge-success">Success</span>
-                        </td>
-                        <td class="project-actions text-right">
-                            <a class="btn btn-info btn-sm" href="#">
-                                <i class="fas fa-pencil-alt">
-                                </i>
-                                Edit
-                            </a>
-                            <a class="btn btn-danger btn-sm" href="#">
-                                <i class="fas fa-trash">
-                                </i>
-                                Delete
-                            </a>
-                        </td>
-                    </tr> -->
                     </tbody>
                 </table>
             </div>
@@ -122,50 +98,4 @@
 
     </section>
     <!-- /.content -->
-</div>
-
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Form Input Materi</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <form method="post" action="<?php echo base_url() . 'materi/tambah_materi'; ?>">
-                    <div class="card-body">
-                        <h5 class="mb-2">Judul Materi</h5>
-
-                        <div class="input-group mb-3">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text"><i class="fas fa-book-open"></i></span>
-                            </div>
-                            <input type="text" name="judul_materi" class="form-control" placeholder="Judul Materi">
-                        </div>
-
-                        <h5 class="mt-4 mb-2">Isi Materi</h5>
-
-                        <div class="row">
-
-                            <!-- /.col-lg-6 -->
-                            <div class="col-lg-12">
-                                <div class="input-group mb-3">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text"></span>
-                                    </div>
-                                    <textarea type="text" name="isi_materi" class="form-control" rows="3" placeholder="Isi Materi"></textarea>
-                                </div>
-                            </div>
-                            <!-- /.col-lg-12 -->
-                        </div>
-                    </div>
-                    <button type="reset" class="btn btn-danger" data-dismiss="modal">Reset</button>
-                    <button type="submit" class="btn btn-primary">Simpan</button>
-                </form>
-            </div>
-        </div>
-    </div>
 </div>
