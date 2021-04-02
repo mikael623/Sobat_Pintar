@@ -24,7 +24,7 @@ class Materi extends CI_Controller
         $this->load->view('page/footer');
     }
 
-    function tambah_aksi()
+    public function tambah_aksi()
     {
         $judul = $this->input->post('judul_materi');
         $isi = $this->input->post('isi_materi');

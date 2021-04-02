@@ -57,7 +57,7 @@
                             </div>
                             <!-- /.card-body -->
                             <div class="card-footer text-lg-right">
-                                <button type="submit" class="btn btn-primary">Simpan</button>
+                                <input type="submit" class="btn btn-primary" value="Simpan"></input>
                             </div>
                         </div>
                     </form>

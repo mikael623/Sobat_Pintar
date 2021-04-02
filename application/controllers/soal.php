@@ -25,7 +25,7 @@ class Soal extends CI_Controller
         $this->load->view('page/footer');
     }
 
-    function tambah_aksi()
+    public function tambah_aksi()
     {
         $soal = $this->input->post('soal');
         $a = $this->input->post('a');

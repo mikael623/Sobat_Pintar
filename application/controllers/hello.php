@@ -10,30 +10,23 @@ class Hello extends CI_Controller
 
         $this->load->view('index');
         $this->load->view('page/footer');
-        // $this->load->view('index');
     }
 
-    // public function soal()
-    // {
-    //     $data['konten'] = "daftar_soal";
-    //     $this->load->view('page/pages', $data);
-    // }
+    public function admin()
+    {
+        $this->load->view('page/header');
+        $this->load->view('page/sidebar');
 
-    // public function tambah_soal()
-    // {
-    //     $data['konten'] = "tambah_soal";
-    //     $this->load->view('page/pages', $data);
-    // }
+        $this->load->view('profile/profile');
+        $this->load->view('page/footer');
+    }
 
-    // public function materi()
-    // {
-    //     $data['konten'] = "daftar_materi";
-    //     $this->load->view('page/pages', $data);
-    // }
+    public function tentang()
+    {
+        $this->load->view('page/header');
+        $this->load->view('page/sidebar');
 
-    // public function tambah_materi()
-    // {
-    //     $data['konten'] = "tambah_materi";
-    //     $this->load->view('page/pages', $data);
-    // }
+        $this->load->view('tentangkita');
+        $this->load->view('page/footer');
+    }
 }

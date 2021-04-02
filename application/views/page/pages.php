@@ -47,7 +47,7 @@
                     <a href="<?php echo base_url() ?>" class="nav-link">Beranda</a>
                 </li>
                 <li class="nav-item d-none d-sm-inline-block">
-                    <a href="#" class="nav-link">Tentang Admin</a>
+                    <a href="<?php echo site_url('tentangkita/tentang') ?>" class="nav-link">Tentang Admin</a>
                 </li>
             </ul>
 
