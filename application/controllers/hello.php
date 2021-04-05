@@ -10,6 +10,9 @@ class Hello extends CI_Controller
 
         $this->load->view('index');
         $this->load->view('page/footer');
+
+        $this->load->model('model_login');
+		$this->model_login->keamanan();
     }
 
     public function admin()

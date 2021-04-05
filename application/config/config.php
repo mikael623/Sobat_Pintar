@@ -35,7 +35,7 @@ $config['base_url'] = 'http://localhost/sobat_pintar/';
 | variable so that it is blank.
 |
 */
-$config['index_page'] = '';
+$config['login'] = '';
 
 /*
 |--------------------------------------------------------------------------
