@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 30 Mar 2021 pada 09.19
+-- Waktu pembuatan: 07 Apr 2021 pada 14.49
 -- Versi server: 10.4.17-MariaDB
 -- Versi PHP: 8.0.2
 
@@ -24,6 +24,24 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Struktur dari tabel `login`
+--
+
+CREATE TABLE `login` (
+  `username` varchar(50) NOT NULL,
+  `password` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `login`
+--
+
+INSERT INTO `login` (`username`, `password`) VALUES
+('admin', 'admin');
+
+-- --------------------------------------------------------
+
+--
 -- Struktur dari tabel `materi`
 --
 
@@ -39,7 +57,25 @@ CREATE TABLE `materi` (
 --
 
 INSERT INTO `materi` (`id`, `judul_materi`, `isi_materi`, `gambar`) VALUES
-(5, 'Materi 1', 'qwer', '');
+(9, 'materi 2', 'asdf', ''),
+(11, 'asdf', 'asdf', '');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `soal`
+--
+
+CREATE TABLE `soal` (
+  `id` int(11) NOT NULL,
+  `soal` varchar(255) NOT NULL,
+  `a` varchar(255) NOT NULL,
+  `b` varchar(255) NOT NULL,
+  `c` varchar(255) NOT NULL,
+  `d` varchar(255) NOT NULL,
+  `e` varchar(255) NOT NULL,
+  `correct` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Indexes for dumped tables
@@ -52,6 +88,12 @@ ALTER TABLE `materi`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indeks untuk tabel `soal`
+--
+ALTER TABLE `soal`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
@@ -59,7 +101,13 @@ ALTER TABLE `materi`
 -- AUTO_INCREMENT untuk tabel `materi`
 --
 ALTER TABLE `materi`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+
+--
+-- AUTO_INCREMENT untuk tabel `soal`
+--
+ALTER TABLE `soal`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

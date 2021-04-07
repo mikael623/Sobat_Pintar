@@ -1,8 +1,12 @@
-const linkColor = document.querySelectorAll('.nav-link')
+const horizontalAccordions = $(".accordion.width");
 
-function colorLink(){
-    linkColor.forEach(l => l.classList.remove('active'))
-    this.classList.add('active')
-}
-
-linkColor.forEach(l => l.addEventListener('click', colorLink))
+horizontalAccordions.each((index, element) => {
+	const accordion = $(element);
+  const collapse = accordion.find(".collapse");
+  const bodies = collapse.find("> *");
+  accordion.height(accordion.height());  
+  bodies.width(bodies.eq(0).width());
+  collapse.not(".show").each((index, element) => {
+  	$(element).parent().find("[data-toggle='collapse']").addClass("collapsed");
+  });
+});

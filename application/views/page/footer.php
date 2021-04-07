@@ -45,7 +45,16 @@
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="<?php echo base_url() ?>assets/dist/js/pages/dashboard.js"></script>
 
-<script src="<?php echo base_url() ?>assets/dist/js/main.js"></script>
+<script type="text/javascript" src="<?php echo base_url() ?>assets/dist/js/main.js"></script>
+
+<script>
+  $(function() {
+    //Date picker
+    $('#reservationdate').datetimepicker({
+      format: 'L'
+    });
+  })
+</script>
 </body>
 
 </html>
