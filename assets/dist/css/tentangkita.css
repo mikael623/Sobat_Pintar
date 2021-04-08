@@ -17,7 +17,7 @@ h2{
 }
 
 h4{
-    font-size: 24px;
+    font-size: 20px;
     color: #333;
     font-weight: bold;
 }
@@ -52,5 +52,5 @@ h4{
 }
 
 #team .card:hover h4, .card:hover i{
-    color: #fff;
+    color: #e74c3c;
 }

@@ -30,7 +30,7 @@
     <link rel="stylesheet" href="<?php echo base_url() ?>assets/dist/css/style_profil.css">
 
     <!-- about team -->
-    <link rel="stylesheet" href="<?php echo base_url() ?>assets/css/tentangkit.css">
+    <link rel="stylesheet" href="<?php echo base_url() ?>assets/dist/css/tentangkita.css">
 
 </head>
 
