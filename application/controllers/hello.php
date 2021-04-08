@@ -9,10 +9,11 @@ class Hello extends CI_Controller
         $this->load->view('page/sidebar');
 
         $this->load->view('index');
+        //$this->load->view('tentangkita');
         $this->load->view('page/footer');
 
-        $this->load->model('model_login');
-		$this->model_login->keamanan();
+        // $this->load->model('model_login');
+        //	$this->model_login->keamanan();
     }
 
     public function admin()

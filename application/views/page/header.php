@@ -29,6 +29,9 @@
 
     <link rel="stylesheet" href="<?php echo base_url() ?>assets/dist/css/style_profil.css">
 
+    <!-- about team -->
+    <link rel="stylesheet" href="<?php echo base_url() ?>assets/css/tentangkit.css">
+
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">
