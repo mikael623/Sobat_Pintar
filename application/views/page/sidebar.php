@@ -43,6 +43,9 @@
                         <p>Soal</p>
                     </a>
                 </li>
+                <li class="nav-item">
+                    <button class="btn btn-lg btn-primary btn-block" name="Submit" value="Logout" type="Submit" href="<?php echo site_url('login/logout')?>" class="nav-link">Logout</button>
+                </li>
             </ul>
         </nav>
         <!-- /.sidebar-menu -->
