@@ -29,10 +29,10 @@ class Login extends CI_Controller
 
 			$this->db->query("update login set password='".$tokan."'where email='".$email."'");
 
-			$message="Please click on password reset link <br> <a href='".base_url('reset?tokan=').."'>Reset Password</a>";
-			$this->Email($email,'Reset Password Link','');
+			$info="Please click on password reset link <br> <a href='".base_url('reset?tokan=').$tokan."'>Reset Password</a>";
+			$this->Email($email,'Reset Password Link',$info);
 		} else{
-			$this->session->set_flashdata('message',"Email not registered");
+			$this->session->set_flashdata('info',"Email not registered");
 			redirect(base_url('Forgotpassword'));
 		}
 	}

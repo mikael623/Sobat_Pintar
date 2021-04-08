@@ -1,6 +1,6 @@
 <div class = "container">
     <div class="wrapper">
-        <?=$this->session->flashdata('message');?>
+        <!-- <?=$this->session->flashdata('message');?> -->
     <form action="<?php echo site_url('updatepass')?>" method="post" name="Login_Form" class="form-signin">       
         <h3 class="form-signin-heading">Reset Password</h3>
         <hr class="colorgraph"><br>
