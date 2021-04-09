@@ -3,6 +3,11 @@
 class Hello extends CI_Controller
 {
 
+    public function __construct()
+    {
+        parent::__construct();
+    }
+
     public function index()
     {
         $this->load->view('page/header');
@@ -13,7 +18,7 @@ class Hello extends CI_Controller
         $this->load->view('page/footer');
 
         // $this->load->model('model_login');
-        //	$this->model_login->keamanan();
+        // $this->model_login->keamanan();
     }
 
     public function admin()

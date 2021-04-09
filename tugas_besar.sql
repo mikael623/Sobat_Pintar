@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 07 Apr 2021 pada 14.49
+-- Waktu pembuatan: 08 Apr 2021 pada 17.51
 -- Versi server: 10.4.17-MariaDB
--- Versi PHP: 8.0.2
+-- Versi PHP: 7.3.27
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -29,15 +29,16 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `login` (
   `username` varchar(50) NOT NULL,
-  `password` varchar(50) NOT NULL
+  `password` varchar(50) NOT NULL,
+  `email` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data untuk tabel `login`
 --
 
-INSERT INTO `login` (`username`, `password`) VALUES
-('admin', 'admin');
+INSERT INTO `login` (`username`, `password`, `email`) VALUES
+('admin', 'admin', 'syarifatulaisyiyah@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -57,40 +58,22 @@ CREATE TABLE `materi` (
 --
 
 INSERT INTO `materi` (`id`, `judul_materi`, `isi_materi`, `gambar`) VALUES
-(9, 'materi 2', 'asdf', ''),
-(11, 'asdf', 'asdf', '');
-
--- --------------------------------------------------------
-
---
--- Struktur dari tabel `soal`
---
-
-CREATE TABLE `soal` (
-  `id` int(11) NOT NULL,
-  `soal` varchar(255) NOT NULL,
-  `a` varchar(255) NOT NULL,
-  `b` varchar(255) NOT NULL,
-  `c` varchar(255) NOT NULL,
-  `d` varchar(255) NOT NULL,
-  `e` varchar(255) NOT NULL,
-  `correct` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+(5, 'Materi 1', 'qwer', '');
 
 --
 -- Indexes for dumped tables
 --
 
 --
+-- Indeks untuk tabel `login`
+--
+ALTER TABLE `login`
+  ADD PRIMARY KEY (`username`);
+
+--
 -- Indeks untuk tabel `materi`
 --
 ALTER TABLE `materi`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indeks untuk tabel `soal`
---
-ALTER TABLE `soal`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -101,13 +84,7 @@ ALTER TABLE `soal`
 -- AUTO_INCREMENT untuk tabel `materi`
 --
 ALTER TABLE `materi`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
-
---
--- AUTO_INCREMENT untuk tabel `soal`
---
-ALTER TABLE `soal`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -8,7 +8,7 @@
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="<?php echo base_url() ?>">Beranda</a></li>
+                        <li class="breadcrumb-item"><?php echo anchor('hello/index', 'Beranda'); ?></li>
                         <li class="breadcrumb-item"><?php echo anchor('materi/index', 'Materi'); ?></li>
                         <li class="breadcrumb-item active">Tambah Materi</li>
                     </ol>

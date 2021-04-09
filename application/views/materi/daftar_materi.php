@@ -4,12 +4,12 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1>Daftar Soal</h1>
+                    <h1>Daftar Materi</h1>
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="<?php echo base_url() ?>">Beranda</a></li>
-                        <li class="breadcrumb-item active">Soal</li>
+                        <li class="breadcrumb-item"><?php echo anchor('hello/index', 'Beranda'); ?></li>
+                        <li class="breadcrumb-item active">Materi</li>
                     </ol>
                 </div>
             </div>
@@ -22,10 +22,10 @@
         <!-- Default box -->
         <div class="card">
             <div class="card-header">
-                <h3 class="card-title">Soal</h3>
+                <h3 class="card-title">Materi</h3>
 
                 <div class="card-tools">
-                    <?php echo anchor('soal/tambah_soal', '<button class="btn btn-tool btn-outline-secondary" ><i class="fas fa-plus"> Tambah Soal</i></button>'); ?>
+                    <?php echo anchor('materi/tambah_materi', '<button class="btn btn-tool btn-outline-secondary" ><i class="fas fa-plus"> Tambah Materi</i></button>'); ?>
                     <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
                         <i class="fas fa-minus"></i>
                     </button>
@@ -42,52 +42,44 @@
                             <th style="width: 2%">
                                 #
                             </th>
-                            <th style="width: 70%">
-                                Soal
+                            <th style="width: 95%">
+                                Materi
                             </th>
-                            <th style="width: 8%" class="text-center">
-                                Status
-                            </th>
-                            <th style="width: 20%">
-                            </th>
+                            <th style="width: auto"></th>
+                            <th style="width: auto"></th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <?php
-                            $no = 1;
-                            foreach ($soal as $soal1) :
-                            ?>
+                        <?php
+                        $no = 1;
+                        foreach ($materi as $mtr) :
+                        ?>
+                            <tr>
                                 <td>
-                                    <?php
-                                    echo $no++
-                                    ?>
+                                    <?php echo $no++ ?>
                                 </td>
                                 <td>
-                                    <a>
-                                        <?php
-                                        echo $soal1->soal
-                                        ?>
-                                    </a>
-                                </td>
-                                <td class="project-state">
-                                    <span class="badge badge-success">Success</span>
+                                    <b><?php echo $mtr->judul_materi ?></b>
+                                    <div class="overflow-hidden text-truncate font-weight-light" style="max-width: 200px;">
+                                        <?php echo $mtr->isi_materi ?>
+                                    </div>
                                 </td>
                                 <td class="project-actions text-right">
-                                    <div class="btn btn-info btn-sm">
-                                        <i class="fas fa-pencil-alt"></i> Edit
+                                    <div>
+                                        <?php echo anchor('materi/edit/' . $mtr->id, '<button type="button" class="btn btn-info btn-sm">
+                                        <i class="fas fa-pencil-alt"></i>
+                                    </button>') ?>
                                     </div>
                                 </td>
                                 <td onclick="javascript: return confirm('Anda yakin hapus?')" class="project-actions text-right">
-                                    <?php echo anchor('soal/hapus/' . $soal1->id, '<div class="btn btn-danger btn-sm">
-                                    <i class="fas fa-trash">
-                                    </i>
-                                </div>') ?>
+                                    <?php echo anchor('materi/hapus/' . $mtr->id, '<button type="button" class="btn btn-danger btn-sm">
+                                        <i class="fas fa-trash"></i>
+                                    </button>') ?>
                                 </td>
-                        </tr>
-                    <?php
-                            endforeach;
-                    ?>
+                            </tr>
+                        <?php
+                        endforeach;
+                        ?>
                     </tbody>
                 </table>
             </div>

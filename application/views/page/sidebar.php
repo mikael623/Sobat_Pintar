@@ -13,7 +13,7 @@
                 <img src="<?php echo base_url() ?>assets/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
             </div>
             <div class="info">
-                <a href="<?php echo site_url('hello/admin') ?>" class="d-block">Admin Pertama</a>
+                <a href="<?php echo site_url('hello/admin') ?>" class="d-block">Milzam Dwi Kirana S</a>
             </div>
         </div>
 
@@ -23,7 +23,7 @@
                 <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
                 <li class="nav-item menu-open">
-                    <a href="<?php echo base_url() ?>" class="nav-link">
+                    <a href="<?php echo site_url('hello/index') ?>" class="nav-link">
                         <i class="nav-icon fas fa-tachometer-alt"></i>
                         <p>
                             Dashboard
@@ -44,7 +44,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="<?php echo site_url('login/logout')?>" class="nav-link">Logout</a>
+                    <a href="<?php echo site_url('login/logout') ?>" class="nav-link">Logout</a>
                 </li>
             </ul>
         </nav>

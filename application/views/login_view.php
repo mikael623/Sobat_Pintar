@@ -9,6 +9,9 @@
 <link rel="stylesheet" href="<?php echo base_url() ?>assets/plugins/fontawesome-free/css/all.min.css">
 
 <body>
+    <div class="preloader flex-column justify-content-center align-items-center">
+        <img class="animation__shake" src="<?php echo base_url() ?>assets/dist/img/logo_2.png" alt="AdminLTELogo" height="100" width="100">
+    </div>
     <div class="container">
         <div class="wrapper">
             <form action="<?php echo site_url('login/ceklogin') ?>" method="post" name="Login_Form" class="form-signin">
@@ -24,8 +27,6 @@
 
                 <input type="text" class="form-control" name="username" placeholder="Username" required="" autofocus="" />
                 <input type="password" class="form-control" name="password" placeholder="Password" required="" />
-
-                <center><ahref="<?=base_url('Forgotpassword')?>">Forgot your password</a></center>
 
                 <button class="btn btn-lg btn-primary btn-block" name="Submit" value="Login" type="Submit">Login</button>
             </form>

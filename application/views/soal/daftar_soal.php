@@ -4,12 +4,12 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1>Daftar Materi</h1>
+                    <h1>Daftar Soal</h1>
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="<?php echo base_url() ?>">Beranda</a></li>
-                        <li class="breadcrumb-item active">Materi</li>
+                        <li class="breadcrumb-item"><?php echo anchor('hello/index', 'Beranda'); ?></li>
+                        <li class="breadcrumb-item active">Soal</li>
                     </ol>
                 </div>
             </div>
@@ -22,10 +22,10 @@
         <!-- Default box -->
         <div class="card">
             <div class="card-header">
-                <h3 class="card-title">Materi</h3>
+                <h3 class="card-title">Soal</h3>
 
                 <div class="card-tools">
-                    <?php echo anchor('materi/tambah_materi', '<button class="btn btn-tool btn-outline-secondary" ><i class="fas fa-plus"> Tambah Materi</i></button>'); ?>
+                    <?php echo anchor('soal/tambah_soal', '<button class="btn btn-tool btn-outline-secondary" ><i class="fas fa-plus"> Tambah Soal</i></button>'); ?>
                     <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
                         <i class="fas fa-minus"></i>
                     </button>
@@ -42,13 +42,11 @@
                             <th style="width: 2%">
                                 #
                             </th>
-                            <th style="width: 70%">
-                                Materi
+                            <th style="width: 95%">
+                                Soal
                             </th>
-                            <th style="width: 8%" class="text-center">
-                                Status
-                            </th>
-                            <th style="width: 20%">
+                            <th style="width: auto"></th>
+                            <th style="width: auto"></th>
                             </th>
                         </tr>
                     </thead>
@@ -56,7 +54,7 @@
                         <tr>
                             <?php
                             $no = 1;
-                            foreach ($materi as $mtr) :
+                            foreach ($soal as $soal1) :
                             ?>
                                 <td>
                                     <?php
@@ -64,26 +62,22 @@
                                     ?>
                                 </td>
                                 <td>
-                                    <a>
-                                        <?php
-                                        echo $mtr->judul_materi
-                                        ?>
-                                    </a>
-                                </td>
-                                <td class="project-state">
-                                    <span class="badge badge-success">Success</span>
-                                </td>
-                                <td class="project-actions text-right">
-                                    <div class="btn btn-info btn-sm">
-                                        <i class="fas fa-pencil-alt"></i> Edit
+                                    <b><?php echo $soal1->soal ?></b>
+                                    <div class="overflow-hidden text-truncate font-weight-light" style="max-width: 200px;">
+                                        <?php echo $soal1->correct ?>
                                     </div>
                                 </td>
-                                <td onclick="javascript: return confirm('Anda yakin hapus?')" class="project-actions text-right">
-                                    <?php echo anchor('materi/hapus/' . $mtr->id, '<div class="btn btn-danger btn-sm">
-                                        <i class="fas fa-trash">
-                                        </i>
+                                <td class="project-actions text-right">
+                                    <?php echo anchor('soal/edit/' . $soal1->id, '<div class="btn btn-info btn-sm">
+                                        <i class="fas fa-pencil-alt"></i>
                                     </div>') ?>
 
+                                </td>
+                                <td onclick="javascript: return confirm('Anda yakin hapus?')" class="project-actions text-right">
+                                    <?php echo anchor('soal/hapus/' . $soal1->id, '<div class="btn btn-danger btn-sm">
+                                    <i class="fas fa-trash">
+                                    </i>
+                                </div>') ?>
                                 </td>
                         </tr>
                     <?php

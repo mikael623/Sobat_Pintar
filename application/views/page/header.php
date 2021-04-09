@@ -29,18 +29,12 @@
 
     <link rel="stylesheet" href="<?php echo base_url() ?>assets/dist/css/style_profil.css">
 
-    <!-- about team -->
-    <link rel="stylesheet" href="<?php echo base_url() ?>assets/dist/css/tentangkita.css">
-
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">
     <div class="wrapper">
 
-        <!-- Preloader -->
-        <!-- <div class="preloader flex-column justify-content-center align-items-center">
-            <img class="animation__shake" src="<?php echo base_url() ?>assets/dist/img/AdminLTELogo.png" alt="AdminLTELogo" height="60" width="60">
-        </div> -->
+
 
         <!-- Navbar -->
         <nav class="main-header navbar navbar-expand navbar-white navbar-light">
@@ -50,7 +44,7 @@
                     <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
                 </li>
                 <li class="nav-item d-none d-sm-inline-block">
-                    <a href="<?php echo base_url() ?>" class="nav-link">Beranda</a>
+                    <a href="<?php echo site_url('hello/index') ?>" class="nav-link">Beranda</a>
                 </li>
                 <li class="nav-item d-none d-sm-inline-block">
                     <a href="<?php echo site_url('hello/tentang') ?>" class="nav-link">Tentang Admin</a>
@@ -61,15 +55,15 @@
             <ul class="navbar-nav ml-auto">
 
                 <!-- Messages Dropdown Menu -->
-                <li class="nav-item dropdown">
-                    <a class="nav-link" data-toggle="dropdown" href="#">
+                <!-- <li class="nav-item dropdown">
+                    <a class="nav-link disabled" data-toggle="dropdown" href="#">
                         <i class="far fa-comments"></i>
                         <span class="badge badge-danger navbar-badge">3</span>
                     </a>
                     <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-                        <a href="#" class="dropdown-item">
-                            <!-- Message Start -->
-                            <div class="media">
+                        <a href="#" class="dropdown-item"> -->
+                <!-- Message Start -->
+                <!-- <div class="media">
                                 <img src="<?php echo base_url() ?>assets/dist/img/user1-128x128.jpg" alt="User Avatar" class="img-size-50 mr-3 img-circle">
                                 <div class="media-body">
                                     <h3 class="dropdown-item-title">
@@ -79,13 +73,13 @@
                                     <p class="text-sm">Call me whenever you can...</p>
                                     <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
                                 </div>
-                            </div>
-                            <!-- Message End -->
-                        </a>
+                            </div> -->
+                <!-- Message End -->
+                <!-- </a>
                         <div class="dropdown-divider"></div>
-                        <a href="#" class="dropdown-item">
-                            <!-- Message Start -->
-                            <div class="media">
+                        <a href="#" class="dropdown-item"> -->
+                <!-- Message Start -->
+                <!-- <div class="media">
                                 <img src="<?php echo base_url() ?>assets/dist/img/user8-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle mr-3">
                                 <div class="media-body">
                                     <h3 class="dropdown-item-title">
@@ -95,13 +89,13 @@
                                     <p class="text-sm">I got your message bro</p>
                                     <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
                                 </div>
-                            </div>
-                            <!-- Message End -->
-                        </a>
+                            </div> -->
+                <!-- Message End -->
+                <!-- </a>
                         <div class="dropdown-divider"></div>
-                        <a href="#" class="dropdown-item">
-                            <!-- Message Start -->
-                            <div class="media">
+                        <a href="#" class="dropdown-item"> -->
+                <!-- Message Start -->
+                <!-- <div class="media">
                                 <img src="<?php echo base_url() ?>assets/dist/img/user3-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle mr-3">
                                 <div class="media-body">
                                     <h3 class="dropdown-item-title">
@@ -111,13 +105,13 @@
                                     <p class="text-sm">The subject goes here</p>
                                     <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
                                 </div>
-                            </div>
-                            <!-- Message End -->
-                        </a>
+                            </div> -->
+                <!-- Message End -->
+                <!-- </a>
                         <div class="dropdown-divider"></div>
                         <a href="#" class="dropdown-item dropdown-footer">See All Messages</a>
                     </div>
-                </li>
+                </li> -->
 
                 <li class="nav-item">
                     <a class="nav-link" data-widget="fullscreen" href="#" role="button">

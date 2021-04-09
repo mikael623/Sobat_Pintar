@@ -13,7 +13,7 @@ class Soal extends CI_Controller
         $data['soal'] = $this->m_soal->tampil_data()->result();
         $this->load->view('page/header');
         $this->load->view('page/sidebar');
-        $this->load->view('daftar_soal', $data);
+        $this->load->view('soal/daftar_soal', $data);
         $this->load->view('page/footer');
     }
 
@@ -21,7 +21,7 @@ class Soal extends CI_Controller
     {
         $this->load->view('page/header');
         $this->load->view('page/sidebar');
-        $this->load->view('tambah_soal');
+        $this->load->view('soal/tambah_soal');
         $this->load->view('page/footer');
     }
 
@@ -53,6 +53,45 @@ class Soal extends CI_Controller
     {
         $where = array('id' => $id);
         $this->m_soal->hapus_data($where, 'soal');
+        redirect('soal/index');
+    }
+
+    public function edit($id)
+    {
+        $where = array('id' => $id);
+        $data['soal'] = $this->m_soal->edit_data($where, 'soal')->result();
+        $this->load->view('page/header');
+        $this->load->view('page/sidebar');
+        $this->load->view('soal/edit_soal', $data);
+        $this->load->view('page/footer');
+    }
+
+    public function update()
+    {
+        $id = $this->input->post('id');
+        $soal = $this->input->post('soal');
+        $a = $this->input->post('a');
+        $b = $this->input->post('b');
+        $c = $this->input->post('c');
+        $d = $this->input->post('d');
+        $e = $this->input->post('e');
+        $correct = $this->input->post('correct');
+
+        $data = array(
+            'soal' => $soal,
+            'a' => $a,
+            'b' => $b,
+            'c' => $c,
+            'd' => $d,
+            'e' => $e,
+            'correct' => $correct,
+        );
+
+        $where = array(
+            'id' => $id
+        );
+
+        $this->m_soal->update_data($where, $data, 'soal');
         redirect('soal/index');
     }
 }
