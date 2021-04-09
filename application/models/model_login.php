@@ -9,7 +9,7 @@ class Model_login extends CI_Model {
         $this->db->where('password', $password);
         $query = $this ->db->get('login');
         if ($query->num_rows()>0){
-            foreach ($query->result() as $row){
+            foreach ($query->results() as $row){
                 $sess = array('username' => $row->username,
                                 'password' => $row->password
                 );
