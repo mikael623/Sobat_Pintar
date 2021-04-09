@@ -9,25 +9,21 @@
 <link rel="stylesheet" href="<?php echo base_url() ?>assets/plugins/fontawesome-free/css/all.min.css">
 
 <body>
-    <div class="preloader flex-column justify-content-center align-items-center">
+    <!-- <div class="preloader flex-column justify-content-center align-items-center">
         <img class="animation__shake" src="<?php echo base_url() ?>assets/dist/img/logo_2.png" alt="AdminLTELogo" height="100" width="100">
-    </div>
+    </div> -->
     <div class="container">
         <div class="wrapper">
-            <form action="<?php echo site_url('login/ceklogin') ?>" method="post" name="Login_Form" class="form-signin">
+            <form action="<?php echo site_url('login') ?>" method="post" name="Login_Form" class="form-signin">
                 <h3 class="form-signin-heading">Selamat Datang silahkan Login</h3>
                 <hr class="colorgraph"><br>
 
-                <?php
-                $info = $this->session->flashdata('info');
-                if (!empty($info)) {
-                    echo $info;
-                }
-                ?>
 
-                <input type="text" class="form-control" name="username" placeholder="Username" required="" autofocus="" />
-                <input type="password" class="form-control" name="password" placeholder="Password" required="" />
 
+                <input type="text" class="form-control" name="username" placeholder="Username" required autofocus value="<?= set_value('username') ?>" />
+                <?php form_error('username', '<small class="text-danger pl-3">', '</small>'); ?>
+                <input type="password" class="form-control" name="password" placeholder="Password" required />
+                <?php form_error('password', '<small class="text-danger pl-3">', '</small>'); ?>
                 <button class="btn btn-lg btn-primary btn-block" name="Submit" value="Login" type="Submit">Login</button>
             </form>
         </div>

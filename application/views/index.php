@@ -25,128 +25,19 @@
       <div class="row">
         <!-- Left col -->
         <section class="col-lg-12 connectedSortable">
-
-          <!-- TO DO List -->
-          <div class="card">
-            <div class="card-header">
-              <h3 class="card-title">
-                <i class="ion ion-clipboard mr-1"></i>
-                To Do List
-              </h3>
-
+          <div class="wrappers">
+            <div class="inputField">
+              <input type="text" placeholder="Add your new todo">
+              <button><i class="fas fa-plus"></i></button>
             </div>
-            <!-- /.card-header -->
-            <div class="card-body">
-              <ul class="todo-list" data-widget="todo-list">
-                <li>
-                  <!-- drag handle -->
-                  <span class="handle">
-                    <i class="fas fa-ellipsis-v"></i>
-                    <i class="fas fa-ellipsis-v"></i>
-                  </span>
-                  <!-- checkbox -->
-                  <div class="icheck-primary d-inline ml-2">
-                    <input type="checkbox" value="" name="todo1" id="todoCheck1">
-                    <label for="todoCheck1"></label>
-                  </div>
-                  <!-- todo text -->
-                  <span class="text">Design a nice theme</span>
-                  <!-- Emphasis label -->
-                  <small class="badge badge-danger"><i class="far fa-clock"></i> 2 mins</small>
-                  <!-- General tools such as edit or delete-->
-                  <div class="tools">
-                    <i class="fas fa-edit"></i>
-                    <i class="fas fa-trash-o"></i>
-                  </div>
-                </li>
-                <li>
-                  <span class="handle">
-                    <i class="fas fa-ellipsis-v"></i>
-                    <i class="fas fa-ellipsis-v"></i>
-                  </span>
-                  <div class="icheck-primary d-inline ml-2">
-                    <input type="checkbox" value="" name="todo2" id="todoCheck2" checked>
-                    <label for="todoCheck2"></label>
-                  </div>
-                  <span class="text">Make the theme responsive</span>
-                  <small class="badge badge-info"><i class="far fa-clock"></i> 4 hours</small>
-                  <div class="tools">
-                    <i class="fas fa-edit"></i>
-                    <i class="fas fa-trash-o"></i>
-                  </div>
-                </li>
-                <li>
-                  <span class="handle">
-                    <i class="fas fa-ellipsis-v"></i>
-                    <i class="fas fa-ellipsis-v"></i>
-                  </span>
-                  <div class="icheck-primary d-inline ml-2">
-                    <input type="checkbox" value="" name="todo3" id="todoCheck3">
-                    <label for="todoCheck3"></label>
-                  </div>
-                  <span class="text">Let theme shine like a star</span>
-                  <small class="badge badge-warning"><i class="far fa-clock"></i> 1 day</small>
-                  <div class="tools">
-                    <i class="fas fa-edit"></i>
-                    <i class="fas fa-trash-o"></i>
-                  </div>
-                </li>
-                <li>
-                  <span class="handle">
-                    <i class="fas fa-ellipsis-v"></i>
-                    <i class="fas fa-ellipsis-v"></i>
-                  </span>
-                  <div class="icheck-primary d-inline ml-2">
-                    <input type="checkbox" value="" name="todo4" id="todoCheck4">
-                    <label for="todoCheck4"></label>
-                  </div>
-                  <span class="text">Let theme shine like a star</span>
-                  <small class="badge badge-success"><i class="far fa-clock"></i> 3 days</small>
-                  <div class="tools">
-                    <i class="fas fa-edit"></i>
-                    <i class="fas fa-trash-o"></i>
-                  </div>
-                </li>
-                <li>
-                  <span class="handle">
-                    <i class="fas fa-ellipsis-v"></i>
-                    <i class="fas fa-ellipsis-v"></i>
-                  </span>
-                  <div class="icheck-primary d-inline ml-2">
-                    <input type="checkbox" value="" name="todo5" id="todoCheck5">
-                    <label for="todoCheck5"></label>
-                  </div>
-                  <span class="text">Check your messages and notifications</span>
-                  <small class="badge badge-primary"><i class="far fa-clock"></i> 1 week</small>
-                  <div class="tools">
-                    <i class="fas fa-edit"></i>
-                    <i class="fas fa-trash-o"></i>
-                  </div>
-                </li>
-                <li>
-                  <span class="handle">
-                    <i class="fas fa-ellipsis-v"></i>
-                    <i class="fas fa-ellipsis-v"></i>
-                  </span>
-                  <div class="icheck-primary d-inline ml-2">
-                    <input type="checkbox" value="" name="todo6" id="todoCheck6">
-                    <label for="todoCheck6"></label>
-                  </div>
-                  <span class="text">Let theme shine like a star</span>
-                  <small class="badge badge-secondary"><i class="far fa-clock"></i> 1 month</small>
-                  <div class="tools">
-                    <i class="fas fa-edit"></i>
-                    <i class="fas fa-trash-o"></i>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <!-- /.card-body -->
-            <div class="card-footer clearfix">
-              <button type="button" class="btn btn-primary float-right"><i class="fas fa-plus"></i> Add item</button>
+            <ul class="todoList">
+              <!-- data are comes from local storage -->
+            </ul>
+            <div class="footer">
+              <span>You have <span class="pendingTasks"></span> pending tasks</span>
+              <button>Clear All</button>
             </div>
           </div>
-          <!-- /.card -->
         </section>
         <!-- /.Left col -->
       </div>
@@ -155,4 +46,75 @@
   </section>
   <!-- /.content -->
 </div>
+
+<script>
+  const inputBox = document.querySelector(".inputField input");
+  const addBtn = document.querySelector(".inputField button");
+  const todoList = document.querySelector(".todoList");
+  const deleteAllBtn = document.querySelector(".footer button");
+
+  // onkeyup event
+  inputBox.onkeyup = () => {
+    let userEnteredValue = inputBox.value; //getting user entered value
+    if (userEnteredValue.trim() != 0) { //if the user value isn't only spaces
+      addBtn.classList.add("active"); //active the add button
+    } else {
+      addBtn.classList.remove("active"); //unactive the add button
+    }
+  }
+
+  showTasks(); //calling showTask function
+
+  addBtn.onclick = () => { //when user click on plus icon button
+    let userEnteredValue = inputBox.value; //getting input field value
+    let getLocalStorageData = localStorage.getItem("New Todo"); //getting localstorage
+    if (getLocalStorageData == null) { //if localstorage has no data
+      listArray = []; //create a blank array
+    } else {
+      listArray = JSON.parse(getLocalStorageData); //transforming json string into a js object
+    }
+    listArray.push(userEnteredValue); //pushing or adding new value in array
+    localStorage.setItem("New Todo", JSON.stringify(listArray)); //transforming js object into a json string
+    showTasks(); //calling showTask function
+    addBtn.classList.remove("active"); //unactive the add button once the task added
+  }
+
+  function showTasks() {
+    let getLocalStorageData = localStorage.getItem("New Todo");
+    if (getLocalStorageData == null) {
+      listArray = [];
+    } else {
+      listArray = JSON.parse(getLocalStorageData);
+    }
+    const pendingTasksNumb = document.querySelector(".pendingTasks");
+    pendingTasksNumb.textContent = listArray.length; //passing the array length in pendingtask
+    if (listArray.length > 0) { //if array length is greater than 0
+      deleteAllBtn.classList.add("active"); //active the delete button
+    } else {
+      deleteAllBtn.classList.remove("active"); //unactive the delete button
+    }
+    let newLiTag = "";
+    listArray.forEach((element, index) => {
+      newLiTag += `<li>${element}<span class="icon" onclick="deleteTask(${index})"><i class="fas fa-trash"></i></span></li>`;
+    });
+    todoList.innerHTML = newLiTag; //adding new li tag inside ul tag
+    inputBox.value = ""; //once task added leave the input field blank
+  }
+
+  // delete task function
+  function deleteTask(index) {
+    let getLocalStorageData = localStorage.getItem("New Todo");
+    listArray = JSON.parse(getLocalStorageData);
+    listArray.splice(index, 1); //delete or remove the li
+    localStorage.setItem("New Todo", JSON.stringify(listArray));
+    showTasks(); //call the showTasks function
+  }
+
+  // delete all tasks function
+  deleteAllBtn.onclick = () => {
+    listArray = []; //empty the array
+    localStorage.setItem("New Todo", JSON.stringify(listArray)); //set the item in localstorage
+    showTasks(); //call the showTasks function
+  }
+</script>
 <!-- /.content-wrapper -->

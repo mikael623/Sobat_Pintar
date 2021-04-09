@@ -32,4 +32,9 @@ class Model_login extends CI_Model
             redirect('login');
         }
     }
+
+    public function edit_data($where, $table)
+    {
+        return $this->db->get_where($table, $where);
+    }
 }
