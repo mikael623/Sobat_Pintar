@@ -66,7 +66,7 @@
                       <div class="form-group ">
                         <label>Jenis Kelamin</label>
                         <select class="form-control form-control-border" name="gender">
-                          <option value="<?= $user['gender']; ?>">Choose</option>
+                          <option> => <?= $user['gender']; ?></option>
                           <option>Laki-laki</option>
                           <option>Perempuan</option>
                         </select>

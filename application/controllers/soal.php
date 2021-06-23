@@ -5,22 +5,25 @@ class Soal extends CI_Controller
     {
         parent::__construct();
         $this->load->model('m_soal');
+        $this->load->model('model_login');
         $this->load->helper('url');
     }
 
     public function index()
     {
         $data['soal'] = $this->m_soal->tampil_data()->result();
+        $user['user'] = $this->db->get_where('login', ['username' => $this->session->userdata('username')])->row_array();
         $this->load->view('page/header');
-        $this->load->view('page/sidebar');
+        $this->load->view('page/sidebar', $user);
         $this->load->view('soal/daftar_soal', $data);
         $this->load->view('page/footer');
     }
 
     public function tambah_soal()
     {
+        $user['user'] = $this->db->get_where('login', ['username' => $this->session->userdata('username')])->row_array();
         $this->load->view('page/header');
-        $this->load->view('page/sidebar');
+        $this->load->view('page/sidebar', $user);
         $this->load->view('soal/tambah_soal');
         $this->load->view('page/footer');
     }
@@ -60,8 +63,9 @@ class Soal extends CI_Controller
     {
         $where = array('id' => $id);
         $data['soal'] = $this->m_soal->edit_data($where, 'soal')->result();
+        $user['user'] = $this->db->get_where('login', ['username' => $this->session->userdata('username')])->row_array();
         $this->load->view('page/header');
-        $this->load->view('page/sidebar');
+        $this->load->view('page/sidebar', $user);
         $this->load->view('soal/edit_soal', $data);
         $this->load->view('page/footer');
     }

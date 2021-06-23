@@ -24,7 +24,7 @@
                 <div class="col-md-12">
 
                     <!-- Input addon -->
-                    <?= form_open_multipart('materi/tambah_aksi'); ?>
+                    <?= form_open_multipart('materi/tambah_aksi8'); ?>
                     <div class="card card-info">
                         <div class="card-header">
                             <h3 class="card-title">Input Materi</h3>

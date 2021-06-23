@@ -26,6 +26,7 @@
         <!-- Left col -->
         <section class="col-lg-12 connectedSortable">
           <div class="wrappers">
+            <header>To Do List</header>
             <div class="inputField">
               <input type="text" placeholder="Add your new todo">
               <button><i class="fas fa-plus"></i></button>
@@ -95,7 +96,7 @@
     }
     let newLiTag = "";
     listArray.forEach((element, index) => {
-      newLiTag += `<li>${element}<span class="icon" onclick="deleteTask(${index})"><i class="fas fa-trash"></i></span></li>`;
+      newLiTag += `<li>${element} <div class="btn btn-sm btn-default"><i class="fas fa-clock">1 hari</i></div><span class="icon" onclick="deleteTask(${index})"><i class="fas fa-trash"></i></span></li>`;
     });
     todoList.innerHTML = newLiTag; //adding new li tag inside ul tag
     inputBox.value = ""; //once task added leave the input field blank

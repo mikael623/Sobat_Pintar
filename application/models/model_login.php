@@ -4,6 +4,11 @@ defined('BASEPATH') or exit('No direct script access allowed');
 class Model_login extends CI_Model
 {
 
+    public function tampil_data()
+    {
+        return $this->db->get('login');
+    }
+
     public function ambillogin($username, $password)
     {
         $this->db->where('username', $username);

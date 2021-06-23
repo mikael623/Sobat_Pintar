@@ -61,38 +61,40 @@ class Login extends CI_Controller
 		}
 	}
 
-	// public function registrasi()
-	// {
-	// 	$this->form_validation->set_rules('username', 'Username', 'required|is_unique[login.username]', [
-	// 		'is_unique' => 'Username Sudah Ada!'
-	// 	]);
-	// 	$this->form_validation->set_rules('email', 'Email', 'required|valid_email|is_unique[login.email]', [
-	// 		'is_unique' => 'Email Sudah Ada!'
-	// 	]);
-	// 	$this->form_validation->set_rules('password1', 'Password', 'required|min_length[3]|matches[password2]', [
-	// 		'matches' => 'password dont match!',
-	// 		'min_length' => 'Password too Short!'
-	// 	]);
-	// 	$this->form_validation->set_rules('password2', 'Password', 'required|matches[password1]');
+	public function registrasi()
+	{
+		// 	$this->form_validation->set_rules('username', 'Username', 'required|is_unique[login.username]', [
+		// 		'is_unique' => 'Username Sudah Ada!'
+		// 	]);
+		// 	$this->form_validation->set_rules('email', 'Email', 'required|valid_email|is_unique[login.email]', [
+		// 		'is_unique' => 'Email Sudah Ada!'
+		// 	]);
+		// 	$this->form_validation->set_rules('password1', 'Password', 'required|min_length[3]|matches[password2]', [
+		// 		'matches' => 'password dont match!',
+		// 		'min_length' => 'Password too Short!'
+		// 	]);
+		// 	$this->form_validation->set_rules('password2', 'Password', 'required|matches[password1]');
 
-	// 	if ($this->form_validation->run() == false) {
-	// 		$this->load->view('registrasi');
-	// 	} else {
-	// 		$data = [
-	// 			'username' => htmlspecialchars($this->input->post('username')),
-	// 			'password' => password_hash($this->input->post('password1'), PASSWORD_DEFAULT),
-	// 			'email' => htmlspecialchars($this->input->post('email')),
-	// 			'role' => '',
-	// 			'is_active' => 1,
-	// 		];
+		$this->form_validation->set_rules('website_url', 'Url', 'trim|required|xss_clean');
 
-	// 		$this->db->insert('login', $data);
-	// 		$this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
-	// 		Selamat, Anda berhasil daftar
-	// 	  	</div>');
-	// 		redirect('login');
-	// 	}
-	// }
+		if ($this->form_validation->run() == false) {
+			$this->load->view('registrasi');
+		} else {
+			// 		$data = [
+			// 			'username' => htmlspecialchars($this->input->post('username')),
+			// 			'password' => password_hash($this->input->post('password1'), PASSWORD_DEFAULT),
+			// 			'email' => htmlspecialchars($this->input->post('email')),
+			// 			'role' => '',
+			// 			'is_active' => 1,
+			// 		];
+
+			// 		$this->db->insert('login', $data);
+			// 		$this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
+			// 		Selamat, Anda berhasil daftar
+			// 	  	</div>');
+			// 		redirect('login');
+		}
+	}
 
 	// public function ceklogin()
 	// {
@@ -143,7 +145,7 @@ class Login extends CI_Controller
 	{
 		$data['profil'] = $this->db->get_where('id', ['username' => $this->session->userdata('username')])->row_array();
 		$this->load->view('page/header');
-		$this->load->view('page/sidebar');
+		$this->load->view('page/sidebar', $data);
 		$this->load->view('materi/edit_materi', $data);
 		$this->load->view('page/footer');
 	}

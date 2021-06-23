@@ -15,9 +15,9 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-12">
-                    <?php foreach ($materi as $mtr) { ?>
+                    <?php foreach ($materidelapan as $mtr8) { ?>
                         <!-- Input addon -->
-                        <form action="<?php echo base_url() . 'materi/update'; ?>" method="post">
+                        <form action="<?php echo base_url() . 'materi/update8'; ?>" method="post">
                             <div class="card card-info">
                                 <div class="card-header">
                                     <h3 class="card-title">Edit Materi</h3>
@@ -26,11 +26,11 @@
                                     <h5 class="mb-2">Judul Materi</h5>
 
                                     <div class="input-group mb-3">
-                                        <input type="hidden" name="id" class="form-control" value="<?php echo $mtr->id ?>">
+                                        <input type="hidden" name="id" class="form-control" value="<?php echo $mtr8->id ?>">
                                         <div class="input-group-prepend">
                                             <span class="input-group-text"><i class="fas fa-book-open"></i></span>
                                         </div>
-                                        <input type="text" name="judul_materi" class="form-control" value="<?= $mtr->judul_materi ?>">
+                                        <input type="text" name="judul_materi" class="form-control" value="<?= $mtr8->judul_materi ?>">
                                     </div>
 
                                     <h5 class="mt-4 mb-2">Isi Materi</h5>
@@ -43,7 +43,7 @@
                                                 <div class="input-group-prepend">
                                                     <span class="input-group-text">A</span>
                                                 </div>
-                                                <textarea type="text" name="isi_materi" class="form-control" rows="3"><?php echo $mtr->isi_materi ?></textarea>
+                                                <textarea type="text" name="isi_materi" class="form-control" rows="3"><?php echo $mtr8->isi_materi ?></textarea>
                                             </div>
                                         </div>
                                         <!-- /.col-lg-12 -->
@@ -62,7 +62,9 @@
 
                                         <div class="col-lg-12">
                                             <div class="input-group mb-3">
-                                                <img src="<?#= base_url(); ?>assets/dist/upload_file/<?#= $mtr->gambar ?>" alt="Gambar" width="100" height="100">
+                                                <img src="<? #= base_url(); 
+                                                            ?>assets/dist/upload_file/<? #= $mtr->gambar 
+                                                                                        ?>" alt="Gambar" width="100" height="100">
                                             </div>
                                         </div>
                                     </div> -->

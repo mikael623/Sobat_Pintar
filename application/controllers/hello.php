@@ -11,8 +11,9 @@ class Hello extends CI_Controller
 
     public function index()
     {
+        $data['user'] = $this->db->get_where('login', ['username' => $this->session->userdata('username')])->row_array();
         $this->load->view('page/header');
-        $this->load->view('page/sidebar');
+        $this->load->view('page/sidebar', $data);
 
         $this->load->view('index');
         //$this->load->view('tentangkita');
@@ -69,9 +70,9 @@ class Hello extends CI_Controller
 
     public function tentang()
     {
+        $data['user'] = $this->db->get_where('login', ['username' => $this->session->userdata('username')])->row_array();
         $this->load->view('page/header');
-        $this->load->view('page/sidebar');
-
+        $this->load->view('page/sidebar', $data);
         $this->load->view('tentangkita');
         $this->load->view('page/footer');
     }
