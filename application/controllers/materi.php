@@ -52,6 +52,7 @@ class Materi extends CI_Controller
 
     public function tambah_aksi()
     {
+        $sub = $this->input->post('submateri');
         $judul = $this->input->post('judul_materi');
         $isi = $this->input->post('isi_materi');
         $gambar = $_FILES['gambar'];
@@ -73,6 +74,7 @@ class Materi extends CI_Controller
 
 
         $data = array(
+            'submateri' => $sub,
             'judul_materi' => $judul,
             'isi_materi' => $isi,
             'gambar' => $gambar,
@@ -84,6 +86,7 @@ class Materi extends CI_Controller
 
     public function tambah_aksi8()
     {
+        $sub = $this->input->post('subjudul');
         $judul = $this->input->post('judul_materi');
         $isi = $this->input->post('isi_materi');
         $gambar = $_FILES['gambar'];
@@ -105,6 +108,7 @@ class Materi extends CI_Controller
 
 
         $data = array(
+            'subjudul' => $sub,
             'judul_materi' => $judul,
             'isi_materi' => $isi,
             'gambar' => $gambar,
@@ -116,6 +120,7 @@ class Materi extends CI_Controller
 
     public function tambah_aksi9()
     {
+        $sub = $this->input->post('submateri');
         $judul = $this->input->post('judul_materi');
         $isi = $this->input->post('isi_materi');
         $gambar = $_FILES['gambar'];
@@ -137,6 +142,7 @@ class Materi extends CI_Controller
 
 
         $data = array(
+            'submateri' => $sub,
             'judul_materi' => $judul,
             'isi_materi' => $isi,
             'gambar' => $gambar,
@@ -203,10 +209,12 @@ class Materi extends CI_Controller
     public function update()
     {
         $id = $this->input->post('id');
+        $sub = $this->input->post('submateri');
         $judul = $this->input->post('judul_materi');
         $isi = $this->input->post('isi_materi');
 
         $data = array(
+            'submateri' => $sub,
             'judul_materi' => $judul,
             'isi_materi' => $isi,
             'gambar' => '',
@@ -223,10 +231,12 @@ class Materi extends CI_Controller
     public function update8()
     {
         $id = $this->input->post('id');
+        $sub = $this->input->post('subjudul');
         $judul = $this->input->post('judul_materi');
         $isi = $this->input->post('isi_materi');
 
         $data = array(
+            'subjudul' => $sub,
             'judul_materi' => $judul,
             'isi_materi' => $isi,
             'gambar' => '',
@@ -243,10 +253,12 @@ class Materi extends CI_Controller
     public function update9()
     {
         $id = $this->input->post('id');
+        $sub = $this->input->post('submateri');
         $judul = $this->input->post('judul_materi');
         $isi = $this->input->post('isi_materi');
 
         $data = array(
+            'submateri' => $sub,
             'judul_materi' => $judul,
             'isi_materi' => $isi,
             'gambar' => '',

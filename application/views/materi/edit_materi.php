@@ -33,6 +33,23 @@
                                         <input type="text" name="judul_materi" class="form-control" value="<?= $mtr->judul_materi ?>">
                                     </div>
 
+                                    <h5 class="mt-4 mb-2">Sub Materi</h5>
+
+                                    <div class="row">
+
+                                        <!-- /.col-lg-6 -->
+                                        <div class="col-lg-12">
+                                            <div class="input-group mb-3">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text">A</span>
+                                                </div>
+                                                <textarea type="text" name="submateri" class="form-control" rows="3">
+                                                <?php echo $mtr->submateri ?></textarea>
+                                            </div>
+                                        </div>
+                                        <!-- /.col-lg-12 -->
+                                    </div>
+
                                     <h5 class="mt-4 mb-2">Isi Materi</h5>
 
                                     <div class="row">

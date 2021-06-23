@@ -39,6 +39,22 @@
                                 <input type="text" name="judul_materi" id="judul_materi" class="form-control" placeholder="Judul Materi">
                             </div>
 
+                            <h5 class="mt-4 mb-2">Sub Materi</h5>
+
+                            <div class="row">
+
+                                <!-- /.col-lg-6 -->
+                                <div class="col-lg-12">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text">A</span>
+                                        </div>
+                                        <textarea type="text" name="subjudul" id="subjudul" class="form-control" rows="3" placeholder="Sub Materi"></textarea>
+                                    </div>
+                                </div>
+                                <!-- /.col-lg-12 -->
+                            </div>
+
                             <h5 class="mt-4 mb-2">Isi Materi</h5>
 
                             <div class="row">
@@ -54,6 +70,7 @@
                                 </div>
                                 <!-- /.col-lg-12 -->
                             </div>
+
                             <h5 class="mt-4 mb-2">Upload Gambar</h5>
                             <div class="form-group">
                                 <div class="input-group">

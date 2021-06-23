@@ -61,6 +61,7 @@
                                 <td>
                                     <b><?php echo $mtr->judul_materi ?></b>
                                     <div class="overflow-hidden text-truncate font-weight-light" style="max-width: 200px;">
+                                        <?php echo $mtr->submateri ?>
                                         <?php echo $mtr->isi_materi ?>
                                     </div>
                                 </td>
@@ -128,6 +129,7 @@
                                 <td>
                                     <b><?php echo $mtr8->judul_materi ?></b>
                                     <div class="overflow-hidden text-ov text-truncate font-weight-light" style="max-width: 200px;">
+                                        <?php echo $mtr->submateri ?>
                                         <?php echo $mtr8->isi_materi ?>
                                     </div>
                                 </td>
@@ -195,6 +197,7 @@
                                 <td>
                                     <b><?php echo $mtr9->judul_materi ?></b>
                                     <div class="overflow-hidden text-truncate font-weight-light" style="max-width: 200px;">
+                                        <?php echo $mtr->submateri ?>
                                         <?php echo $mtr9->isi_materi ?>
                                     </div>
                                 </td>
