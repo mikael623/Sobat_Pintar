@@ -157,7 +157,7 @@ class Soal extends CI_Controller
     public function edit8($id)
     {
         $where = array('id' => $id);
-        $data['soaldelapan'] = $this->m_soaldelapan->edit_data($where, 'soal')->result();
+        $data['soaldelapan'] = $this->m_soaldelapan->edit_data($where, 'soaldelapan')->result();
         $user['user'] = $this->db->get_where('login', ['username' => $this->session->userdata('username')])->row_array();
         $this->load->view('page/header');
         $this->load->view('page/sidebar', $user);
@@ -168,7 +168,7 @@ class Soal extends CI_Controller
     public function edit9($id)
     {
         $where = array('id' => $id);
-        $data['soalsembilan'] = $this->m_soalsembilan->edit_data($where, 'soal')->result();
+        $data['soalsembilan'] = $this->m_soalsembilan->edit_data($where, 'soalsembilan')->result();
         $user['user'] = $this->db->get_where('login', ['username' => $this->session->userdata('username')])->row_array();
         $this->load->view('page/header');
         $this->load->view('page/sidebar', $user);
